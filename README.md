@@ -1,5 +1,7 @@
 # NgHangman
 
+To play and see the code: https://stackblitz.com/github/nowaytohell/hangman-game
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.7.
 
 ## Development server
