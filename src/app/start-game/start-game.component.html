@@ -1,0 +1,22 @@
+<div class="w3-row">
+	<p class="gametitle">Jeu du Pendu</p>
+</div>
+
+<div class="flex-container">
+	<br>
+	<div class="w3-row">
+		<div class="field-container">
+			<mat-form-field>
+				<input name="userPsedo" matInput placeholder="Psedo" [formControl]="userPsedo" required>
+				<mat-error *ngIf="userPsedo.invalid">Obligatoire</mat-error>
+			</mat-form-field>
+		</div>
+
+		
+		<br>
+		<div class="w3-row">
+			<button mat-button color="primary" [disabled]="userPsedo.invalid" (click)="start()">Commencer</button>
+		</div>
+	</div>
+
+</div>

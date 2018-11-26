@@ -1,0 +1,14 @@
+.field-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-container > * {
+  width: 70%;
+}
+
+.gametitle{
+  text-align: center;
+  padding-top: 60px;
+  font-size: 22px;
+}
