@@ -15,8 +15,7 @@ export class StartGameComponent implements OnInit {
 
   constructor(private gameService: GameService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   start() {
     this.gameService.userName = this.userPsedo.value;

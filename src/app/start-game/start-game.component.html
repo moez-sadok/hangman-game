@@ -1,5 +1,5 @@
 <div class="w3-row">
-	<p class="gametitle">Jeu du Pendu</p>
+	<p class="gametitle">HangMan</p>
 </div>
 
 <div class="flex-container">
@@ -8,14 +8,12 @@
 		<div class="field-container">
 			<mat-form-field>
 				<input name="userPsedo" matInput placeholder="Psedo" [formControl]="userPsedo" required>
-				<mat-error *ngIf="userPsedo.invalid">Obligatoire</mat-error>
+				<mat-error *ngIf="userPsedo.invalid">Required</mat-error>
 			</mat-form-field>
 		</div>
-
-		
 		<br>
 		<div class="w3-row">
-			<button mat-button color="primary" [disabled]="userPsedo.invalid" (click)="start()">Commencer</button>
+			<button mat-button color="primary" [disabled]="userPsedo.invalid" (click)="start()">Start</button>
 		</div>
 	</div>
 

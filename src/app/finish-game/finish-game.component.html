@@ -1,21 +1,19 @@
 <div class="flex-container">
-
 	<div class="w3-row">
 		<div class="w3-row" *ngIf="isWin">
-			<p style="color :green">Félicitations</p>
+			<p class="hm-win">Congratulations</p>
 		</div>
 		<br>
 		<div *ngIf="!isWin">
-			<p style="color :red">Perdu :(</p>
+			<p class="hm-lost">Lost :(</p>
 		</div>
 		<br>
 		<div class="w3-row">
-			<button mat-fab color="accent" (click)="restart()">Rejouer</button>
+			<button mat-fab color="accent" (click)="restart()">Replay</button>
 		</div>
 		<br>
 		<div class="w3-row">
 			<button mat-fab color="primary" (click)="exit()">Exit</button>
 		</div>
 	</div>
-
 </div>

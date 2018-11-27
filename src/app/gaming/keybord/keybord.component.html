@@ -1,15 +1,9 @@
 <mat-grid-list cols="5" rowHeight="35px" style=" text-align:center;">
-
-	<mat-grid-tile *ngFor="let chip of allCars.split('')">
-
+	<mat-grid-tile *ngFor="let char of allCars.split('')">
 		<mat-chip-list>
-			<mat-chip (click)="selectChar(chip)">
-
-				{{chip}}
-
+			<mat-chip (click)="selectChar(char)">
+				{{char}}
 			</mat-chip>
 		</mat-chip-list>
-
 	</mat-grid-tile>
-
 </mat-grid-list>

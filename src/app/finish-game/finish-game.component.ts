@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { GameService } from '../../services/game.service';
+import { GameService } from '../services/game.service';
 
 @Component({
   selector: 'app-finish-game',
   templateUrl: './finish-game.component.html',
-  styleUrls: ['./finish-game.component.css']
+  styleUrls: ['./finish-game.component.scss']
 })
 export class FinishGameComponent implements OnInit {
 
