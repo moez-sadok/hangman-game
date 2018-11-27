@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { StartGameComponent } from './start-game/start-game.component';
 import { PartyComponent } from './gaming/party/party.component';
-import { FinishGameComponent } from './gaming/finish-game/finish-game.component';
+import { FinishGameComponent } from './finish-game/finish-game.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full' },

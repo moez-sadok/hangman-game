@@ -1,40 +1,38 @@
 <mat-toolbar color="primary">
-
-	<mat-toolbar-row>
-		<span>Bonjour, {{gameService.userName}} </span>
-		<span class="pendu-spacer"></span>
-		<mat-icon class="pendu-icon" (click)="exit()">exit_to_app</mat-icon>
-	</mat-toolbar-row>
-
-
+  <mat-toolbar-row>
+    <span>Hello, {{ gameService.userName }} </span>
+    <span class="pendu-spacer"></span>
+    <mat-icon class="pendu-icon" (click)="exit()">exit_to_app</mat-icon>
+  </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="w3-row w3-container">
+  <div class="w3-row">
+    <app-word
+      [word]="wordSearch"
+      [char]="selectedChar"
+      (isCorrectChar)="checkAttemps($event)"
+      (isWordFound)="checkWordFound($event)"
+    ></app-word>
+  </div>
+  <div class="w3-row" style="text-align :center">
+    <app-pendu #pendu></app-pendu>
+  </div>
 
-	<div class="w3-row">
-		<app-word [word]="wordSearch" [char]="selectedChar" (isCorrectChar)="checkAttemps($event)" (isWordFound)="checkWordFound($event)"></app-word>
-	</div>
-	<div class="w3-row" style="text-align :center">
-		<app-pendu #pendu></app-pendu>
-	</div>
+  <div class="w3-row">
+    <p style="text-align: center;">Rest {{ restAttemps }} attemps</p>
+    <p></p>
+  </div>
 
-
-
-	<div class="w3-row">
-		<p style="text-align: center;"> Il vous reste {{restAttemps}} essais
-			<p>
-	</div>
-
-	<div class="w3-row">
-		<div class="w3-quarter w3-container "></div>
-		<div class="w3-half">
-			<div class="w3-row">
-				<div class="w3-rest w3-container ">
-					<app-keybord (onSelectChar)="onUserSelectChar($event)"></app-keybord>
-				</div>
-			</div>
-		</div>
-		<div class="w3-quarter w3-container"></div>
-	</div>
-
+  <div class="w3-row">
+    <div class="w3-quarter w3-container "></div>
+    <div class="w3-half">
+      <div class="w3-row">
+        <div class="w3-rest w3-container ">
+          <app-keybord (onSelectChar)="onUserSelectChar($event)"></app-keybord>
+        </div>
+      </div>
+    </div>
+    <div class="w3-quarter w3-container"></div>
+  </div>
 </div>

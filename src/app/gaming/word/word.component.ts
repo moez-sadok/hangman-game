@@ -18,8 +18,7 @@ export class WordComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
-    let wordSize = this.word.length;
-    this.blancWord = new Array(wordSize + 1).join('-');
+    this.blancWord = new Array(this.word.length + 1).join('-');
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -28,16 +27,15 @@ export class WordComponent implements OnInit, OnChanges {
 
   checkInputChar(c) {
     if (c) {
-      var isFound = false;
+      let isFound = false;
       for (let i = 0; i < this.word.length; i++) {
-        if (this.word.charAt(i) == c) {
+        if (this.word.charAt(i) === c) {
           this.blancWord = this.replaceAt(this.blancWord, i, c);
           isFound = true;
         }
       }
       this.isCorrectChar.emit(isFound);
-
-      if (this.blancWord == this.word) {
+      if (this.blancWord === this.word) {
         this.isWordFound.emit(true);
       }
     }

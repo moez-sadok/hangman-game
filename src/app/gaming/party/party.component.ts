@@ -10,20 +10,20 @@ import {PenduComponent} from '../pendu/pendu.component';
   styleUrls: ['./party.component.scss']
 })
 export class PartyComponent implements OnInit {
-
-  private words: string[] = ['ANGULAR', 'REACT', 'JAVASCRIPT', 'HTML'];
+  private words: string[] = [];
   private maxAttemps: number = 7;
   private restAttemps: number = this.maxAttemps;
 
-  private wordSearch = '';
+  public wordSearch: string = '';
   public selectedChar = '';
 
    @ViewChild(PenduComponent) penduComponent: PenduComponent;
 
   constructor( private router: Router,
-  private gameService : GameService) { }
+  private gameService: GameService) { }
 
   ngOnInit() {
+    this.words = this.gameService.getWords();
     this.initParty();
   }
 
@@ -62,6 +62,5 @@ export class PartyComponent implements OnInit {
   exit(){
     this.router.navigate(['start']);
   }
-
 
 }

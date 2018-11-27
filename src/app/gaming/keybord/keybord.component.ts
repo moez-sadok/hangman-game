@@ -7,15 +7,16 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class KeybordComponent implements OnInit {
 
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output() onSelectChar: EventEmitter<string> = new EventEmitter<string>();
+  public allCars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
   constructor() { }
 
-  @Output() onSelectChar = new EventEmitter<string>();
+  ngOnInit() { }
+
   selectChar(char: string) {
     this.onSelectChar.emit(char);
   }
-
-  public allCars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-  ngOnInit() { }
 
 }
