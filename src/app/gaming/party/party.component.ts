@@ -10,7 +10,7 @@ import {PenduComponent} from '../pendu/pendu.component';
   styleUrls: ['./party.component.scss']
 })
 export class PartyComponent implements OnInit {
-  private words: string[] = [];
+ 
   private maxAttemps: number = 7;
   private restAttemps: number = this.maxAttemps;
 
@@ -23,12 +23,11 @@ export class PartyComponent implements OnInit {
   private gameService: GameService) { }
 
   ngOnInit() {
-    this.words = this.gameService.getWords();
     this.initParty();
   }
 
   initParty() {
-    this.wordSearch = this.getRandomWord();
+    this.wordSearch = this.gameService.getRandomWord();
     this.restAttemps = this.maxAttemps;
     this.gameService.endWithSuccess = false;
   }
@@ -46,10 +45,6 @@ export class PartyComponent implements OnInit {
           this.gameService.endWithSuccess = false;
           this.router.navigate(['finish']);
     }
-  }
-
-  getRandomWord() {
-    return this.words[Math.floor(Math.random() * this.words.length)];
   }
 
   checkWordFound(isFound) {

@@ -4,10 +4,11 @@ import { Injectable } from '@angular/core';
 export class GameService {
   public userName = '';
   public endWithSuccess = false;
+  private words: string[] = ['ANGULAR', 'REACT', 'JAVASCRIPT', 'HTML'];
 
   constructor() {}
 
-  getWords(): string[] {
-    return ['ANGULAR', 'REACT', 'JAVASCRIPT', 'HTML'];
+  getRandomWord() {
+    return this.words[Math.floor(Math.random() * this.words.length)];
   }
 }
